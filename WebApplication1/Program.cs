@@ -35,22 +35,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-var projecten = new List<Project>
-{
-    new Project
-    {
-        Id = 1,
-        Titel = "Hotel Simulation",
-        Categorie = "School"
-    },
-    new Project
-    {
-        Id = 2,
-        Titel = "Gym Director",
-        Categorie = "School"
-    }
-};
-
 // GET //
 
 app.MapGet("/projects", async (AppDbContext db) =>
