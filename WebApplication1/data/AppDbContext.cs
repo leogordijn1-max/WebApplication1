@@ -11,5 +11,6 @@ namespace WebApplication1.data
         }
 
         public DbSet<Project> Projects { get; set; }
+        public DbSet<Blogpost> Blogposts { get; set; }
     }
 }
