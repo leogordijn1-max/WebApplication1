@@ -46,7 +46,6 @@ app.MapControllers();
 // PROJECTS //
 
 GetAllProjects.MapEndpoint(app);
-GetAllProjects.MapEndpoint(app);
 GetProjectById.MapEndpoint(app);
 CreateProject.MapEndpoint(app);
 UpdateProject.MapEndpoint(app);
