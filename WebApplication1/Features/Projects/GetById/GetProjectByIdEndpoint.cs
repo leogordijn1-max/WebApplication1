@@ -1,27 +1,18 @@
 ﻿
 using WebApplication1.data;
-using WebApplication1.DTOs;
 
-namespace WebApplication1.Features.Projects.Update;
+namespace WebApplication1.Features.Projects.GetById;
 
-public static class UpdateProject
+public static class GetProjectByIdEndpoint
 {
     public static void MapEndpoint(WebApplication app)
     {
-        app.MapPut("/projects/{id}", async (int id, UpdateProjectDto dto, AppDbContext db) =>
+        app.MapGet("/projects/{id}", async (int id, AppDbContext db) =>
         {
             var project = await db.Projects.FindAsync(id);
 
             if (project == null)
                 return Results.NotFound();
-
-            project.Titel = dto.Titel;
-            project.Beschrijving = dto.Beschrijving;
-            project.Categorie = dto.Categorie;
-            project.GitHubUrl = dto.GitHubUrl;
-            project.Datum = dto.Datum;
-
-            await db.SaveChangesAsync();
 
             return Results.Ok(new ProjectDto
             {

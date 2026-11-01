@@ -45,18 +45,18 @@ app.MapControllers();
 
 // PROJECTS //
 
-GetAllProjects.MapEndpoint(app);
-GetProjectById.MapEndpoint(app);
-CreateProject.MapEndpoint(app);
-UpdateProject.MapEndpoint(app);
-DeleteProject.MapEndpoint(app);
+GetAllProjectsEndpoint.MapEndpoint(app);
+GetProjectByIdEndpoint.MapEndpoint(app);
+CreateProjectEndpoint.MapEndpoint(app);
+UpdateProjectEndpoint.MapEndpoint(app);
+DeleteProjectEndpoint.MapEndpoint(app);
 
 // BLOGPOSTS //
-GetAllBlogposts.MapEndpoint(app);
-GetBlogpostById.MapEndpoint(app);
-CreateBlogpost.MapEndpoint(app);
-UpdateBlogpost.MapEndpoint(app);
-DeleteBlogpost.MapEndpoint(app);
+GetAllBlogpostsEndpoint.MapEndpoint(app);
+GetBlogpostByIdEndpoint.MapEndpoint(app);
+CreateBlogpostEndpoint.MapEndpoint(app);
+UpdateBlogpostEndpoint.MapEndpoint(app);
+DeleteBlogpostEndpoint.MapEndpoint(app);
 
 
 app.Run();

@@ -1,8 +1,7 @@
-﻿namespace WebApplication1.DTOs
+﻿namespace WebApplication1.Features.Projects.Update
 {
-    public class ProjectDto
+    public class UpdateProjectDto
     {
-        public int Id { get; set; }
         public string Titel { get; set; } = "";
         public string Beschrijving { get; set; } = "";
         public string Categorie { get; set; } = "";

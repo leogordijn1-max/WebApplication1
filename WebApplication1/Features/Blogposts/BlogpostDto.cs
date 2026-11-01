@@ -1,7 +1,8 @@
-﻿namespace WebApplication1.DTOs
+﻿namespace WebApplication1.Features.Blogposts
 {
-    public class UpdateBlogpostDto
+    public class BlogpostDto
     {
+        public int Id { get; set; }
         public string Titel { get; set; } = "";
         public string Inhoud { get; set; } = "";
         public DateTime Publicatiedatum { get; set; }
