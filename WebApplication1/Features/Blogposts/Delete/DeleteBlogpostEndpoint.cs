@@ -4,6 +4,7 @@ public static class DeleteBlogpostEndpoint
 {
     public static void MapEndpoint(WebApplication app)
     {
-        app.MapDelete("/blogposts/{id}", DeleteBlogpostHandler.Handle);
+        app.MapDelete("/blogposts/{id}", DeleteBlogpostHandler.Handle)
+            .RequireAuthorization("CanEditPortfolio");
     }
 }

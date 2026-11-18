@@ -18,6 +18,24 @@ public static class CreateProjectHandler
             Datum = dto.Datum
         };
 
+
+        if (string.IsNullOrWhiteSpace(dto.Titel) ||
+            string.IsNullOrWhiteSpace(dto.Beschrijving) ||
+            string.IsNullOrWhiteSpace(dto.Categorie))
+        {
+            return Results.BadRequest(
+                "Titel, beschrijving en categorie zijn verplicht.");
+        }
+
+        if (!Uri.TryCreate(dto.GitHubUrl, UriKind.Absolute, out var url) ||
+            (url.Scheme != Uri.UriSchemeHttp &&
+             url.Scheme != Uri.UriSchemeHttps))
+        {
+            return Results.BadRequest(
+                "GitHubUrl moet een geldige HTTP- of HTTPS-URL zijn.");
+        }
+
+
         db.Projects.Add(project);
         await db.SaveChangesAsync();
 

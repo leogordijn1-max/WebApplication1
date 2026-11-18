@@ -4,6 +4,7 @@ public static class DeleteProjectEndpoint
 {
     public static void MapEndpoint(WebApplication app)
     {
-        app.MapDelete("/projects/{id}", DeleteProjectHandler.Handle);
+        app.MapDelete("/projects/{id}", DeleteProjectHandler.Handle)
+            .RequireAuthorization("CanEditPortfolio");
     }
 }

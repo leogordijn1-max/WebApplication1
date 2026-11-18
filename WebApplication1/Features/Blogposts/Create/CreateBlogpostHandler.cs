@@ -8,6 +8,20 @@ public static class CreateBlogpostHandler
     public static async Task<IResult> Handle(
         CreateBlogpostDto dto, AppDbContext db)
     {
+
+        if (string.IsNullOrWhiteSpace(dto.Titel) ||
+    string.IsNullOrWhiteSpace(dto.Inhoud))
+        {
+            return Results.BadRequest(
+                "Titel en inhoud zijn verplicht.");
+        }
+
+        if (dto.Publicatiedatum == default)
+        {
+            return Results.BadRequest(
+                "Een geldige publicatiedatum is verplicht.");
+        }
+
         var blogpost = new Blogpost
         {
             Titel = dto.Titel,

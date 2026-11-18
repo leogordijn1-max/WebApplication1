@@ -12,6 +12,19 @@ public static class UpdateBlogpostHandler
         if (blogpost == null)
             return Results.NotFound();
 
+        if (string.IsNullOrWhiteSpace(dto.Titel) ||
+    string.IsNullOrWhiteSpace(dto.Inhoud))
+        {
+            return Results.BadRequest(
+                "Titel en inhoud zijn verplicht.");
+        }
+
+        if (dto.Publicatiedatum == default)
+        {
+            return Results.BadRequest(
+                "Een geldige publicatiedatum is verplicht.");
+        }
+
         blogpost.Titel = dto.Titel;
         blogpost.Inhoud = dto.Inhoud;
         blogpost.Publicatiedatum = dto.Publicatiedatum;

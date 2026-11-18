@@ -4,6 +4,7 @@ public static class CreateBlogpostEndpoint
 {
     public static void MapEndpoint(WebApplication app)
     {
-        app.MapPost("/blogposts", CreateBlogpostHandler.Handle);
+        app.MapPost("/blogposts", CreateBlogpostHandler.Handle)
+            .RequireAuthorization("CanEditPortfolio");
     }
 }
