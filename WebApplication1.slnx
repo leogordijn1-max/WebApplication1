@@ -1,6 +1,6 @@
 <Solution>
   <Folder Name="/Solution Items/">
-    <File Path="README.md" />
+    <File Path="../../../Downloads/README.md" />
   </Folder>
   <Project Path="WebApplication1.Tests/WebApplication1.Tests.csproj" Id="c40ff203-b9eb-4973-bbd1-9bf3999603ee" />
   <Project Path="WebApplication1/WebApplication1.csproj" />
