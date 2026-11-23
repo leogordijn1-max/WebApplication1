@@ -28,8 +28,7 @@ public static class RegisterHandler
         if (!roleResult.Succeeded)
         {
             await userManager.DeleteAsync(user);
-            return Results.Problem(
-                "De rol Gast kon niet worden toegewezen.");
+            return Results.Problem("De rol Gast kon niet worden toegewezen.");
         }
 
         return Results.Created(
